@@ -45,7 +45,7 @@ class ClientController extends Controller
     {
         $postArtical = Cases::orderBy('updated_at', 'desc')->get();
         return view('client.case')->with('postArtical', $postArtical);
-        // return view('client/case');
+        //return view('client/case');
     }
 
     public function donation()
@@ -54,7 +54,7 @@ class ClientController extends Controller
         ->select('donation_request.amount', 'donation_request.updated_at' , 'cases.case_id', 'cases.client_name', 'cases.case_title', 'cases.case_date', 'cases.case_details', 'cases.photo')
         ->get();
         return view('client/donation')->with('donationData', $donationData);
-        // return view('client/donation');
+        //return view('client/donation');
     }
 
     public function getClients()
